@@ -26,5 +26,6 @@ The following class supports two kind of iterators for traversing. The following
 17. rend()
 
 After finishing the scope, destructor is called, and allocated memory gets released
+
 18. ~Vector()
 
