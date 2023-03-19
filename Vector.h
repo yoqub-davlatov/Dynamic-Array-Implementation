@@ -45,6 +45,25 @@ public:
         reallocate(2);
     }
 
+    Vector(size_t newSize, const T& value)
+    {
+        size_t newCapacity = 1;
+        while(newCapacity <= newSize)
+        {
+            newCapacity = newCapacity << 1;
+        }
+        T *newBlock = (T *)::operator new(sizeof(T) * newCapacity);
+
+        for (int i = 0; i < newSize; i++)
+        {
+            new(&newBlock[i]) T(value);
+        }
+
+        m_Capacity = newCapacity;
+        m_Data = newBlock;
+        m_Size = newSize;
+    }
+
     void push_back(const T &item)
     {
         if (m_Size == m_Capacity)

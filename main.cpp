@@ -81,5 +81,14 @@ int main()
         std::cout << v.capacity() << std::endl;
         std::cout << v.back() << std::endl;
     }
+    {
+        Vector<char> v(3, '$');
+        std::cout << v.capacity() << std::endl;
+        for (int i = 0; i < v.size(); i++)
+        {
+            std::cout << v[i] << ' ';
+        }
+        std::cout << std::endl;
+    }
     std::cout << "Success" << std::endl;
 }
